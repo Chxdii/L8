@@ -1,0 +1,38 @@
+<html>
+	<head>
+    <meta charset="utf-8">
+
+    <script src="http://maps.secondlife.com/_scripts/sl.mapapi2.js" type="text/javascript"></script>
+    <link href="http://maps.secondlife.com/_styles/sl.mapapi2.css" rel="stylesheet" type="text/css">
+
+    
+    <style>
+        div#map-container {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <script>
+        var lmap;
+        function loadmap() {
+            // creates the map
+            lmap = SLMap(document.getElementById('map-container'));
+            lmap.setView([1004, 1010], 7);
+
+            // creates a popup
+            L.popup()
+                .setLatLng([1003.9, 1010.1])
+                .setContent("<p>Find me here!!</p><img src='fountain.gif'>")
+                .openOn(lmap);
+        }
+    </script>
+
+   
+
+</head><body onload="loadmap()">
+
+
+    <div id="map-container"></div>
+
+</body>
+</html>
